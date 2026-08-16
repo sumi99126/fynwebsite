@@ -8,7 +8,7 @@
   position: relative;
   width: 100%;
   padding: 45px 40px 85px 40px;
-  background-color: #ffffff;
+  background-color: #fbf9f4; /* Subtle luxury warm ivory tone */
   color: #1a1610;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   box-sizing: border-box;
@@ -22,7 +22,7 @@
   transform: translateX(-50%);
   width: 1000px;
   height: 480px;
-  background: radial-gradient(circle, rgba(235, 215, 175, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(235, 215, 175, 0.14) 0%, rgba(251, 249, 244, 0) 70%);
   pointer-events: none;
   z-index: 0;
 }
