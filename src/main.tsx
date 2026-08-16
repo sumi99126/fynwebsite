@@ -10,9 +10,13 @@ if (!rootElement) {
   throw new Error('Failed to find the root element');
 }
 
+const platformUrl =
+  import.meta.env.VITE_WIZZTECH_PLATFORM_URL ||
+  'https://wizztech-demo-website-platform.netlify.app';
+
 createRoot(rootElement).render(
   <StrictMode>
-    <WizzTechProtectionProvider platformUrl={import.meta.env.VITE_WIZZTECH_PLATFORM_URL}>
+    <WizzTechProtectionProvider platformUrl={platformUrl}>
       <App />
     </WizzTechProtectionProvider>
   </StrictMode>,
