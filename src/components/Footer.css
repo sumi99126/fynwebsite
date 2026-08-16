@@ -1,0 +1,234 @@
+/* Google Fonts for Footer */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+
+/* =========================================
+   FYN Luxury Footer Section
+   ========================================= */
+.fyn-footer-section {
+  position: relative;
+  width: 100%;
+  background-color: #14120e;
+  color: #e5dec9;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-top: 1px solid rgba(196, 161, 98, 0.25);
+}
+
+.fyn-footer-container {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 70px 40px 32px 40px;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   1. 3-Column Main Grid
+   ========================================= */
+.fyn-footer-main-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1.1fr;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+/* Left Column: Contact Details */
+.footer-contact-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-contact-icon {
+  color: #c4a162;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.footer-contact-link {
+  color: #e5dec9;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  transition: color 0.25s ease;
+}
+
+.footer-contact-link:hover {
+  color: #c4a162;
+}
+
+.footer-contact-text {
+  color: #b8ad9b;
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* Center Column: Logo & Social Icons */
+.footer-brand-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-logo-brand-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.footer-logo-img {
+  width: 100px; /* Sized larger */
+  height: 100px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(196, 161, 98, 0.5));
+  transition: transform 0.3s ease;
+}
+
+.footer-logo-img:hover {
+  transform: scale(1.05);
+}
+
+/* Social Media Circles */
+.footer-social-icons-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(196, 161, 98, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+  color: #d8c29d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.footer-social-btn:hover {
+  background: #c4a162;
+  color: #14120e;
+  border-color: #c4a162;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(196, 161, 98, 0.4);
+}
+
+/* Right Column: Editorial Quote */
+.footer-narrative-col {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.footer-narrative-quote {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  font-size: 1.06rem;
+  font-style: italic;
+  font-weight: 400;
+  color: #ded4c0;
+  line-height: 1.7;
+  max-width: 340px;
+  margin: 0;
+}
+
+/* =========================================
+   2. Bottom Bar (Divider + Lightened Copyright)
+   ========================================= */
+.fyn-footer-bottom-bar {
+  border-top: 1px solid rgba(196, 161, 98, 0.18);
+  padding-top: 24px;
+  text-align: center;
+}
+
+.footer-copyright-text {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #c4b7a2; /* Lighter color */
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+/* =========================================
+   3. Responsive Styles
+   ========================================= */
+@media (max-width: 960px) {
+  .fyn-footer-main-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    text-align: center;
+  }
+
+  /* Logo & Social Icons Come FIRST on Mobile */
+  .footer-brand-center {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .footer-logo-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Contact Information Comes SECOND */
+  .footer-contact-col {
+    order: 2;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+  }
+
+  /* Narrative Quote Comes THIRD */
+  .footer-narrative-col {
+    order: 3;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-narrative-quote {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .fyn-footer-container {
+    padding: 45px 18px 24px 18px;
+  }
+
+  .footer-brand-title {
+    font-size: 1.5rem;
+  }
+
+  .footer-logo-img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .footer-social-btn {
+    width: 36px;
+    height: 36px;
+  }
+}

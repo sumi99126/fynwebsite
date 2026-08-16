@@ -1,0 +1,381 @@
+/* Google Fonts for Atelier Location */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/* =========================================
+   Atelier Location & Interactive Map Section
+   ========================================= */
+.atelier-location-section {
+  position: relative;
+  width: 100%;
+  padding: 85px 40px 95px 40px;
+  background-color: #ffffff;
+  color: #1a1610;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.atelier-location-container {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.atelier-location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  align-items: center;
+  gap: 60px;
+}
+
+/* =========================================
+   1. Left Column: Details & Directions
+   ========================================= */
+.atelier-info-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.atelier-kicker {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  color: #c48b82; /* Soft rose / terracotta kicker */
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.atelier-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 3.6vw, 3.4rem);
+  font-weight: 400;
+  color: #1a1610;
+  letter-spacing: -0.015em;
+  margin: 0 0 32px 0;
+  line-height: 1.15;
+}
+
+/* Details List */
+.atelier-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 36px;
+  width: 100%;
+}
+
+.atelier-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.atelier-icon-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fbf1ef;
+  color: #c48b82;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.atelier-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detail-item-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1610;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.detail-item-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: #685b4a;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Directions Button */
+.atelier-directions-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #1a1610;
+  color: #ffffff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.atelier-directions-btn:hover {
+  background: #967645;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(150, 118, 69, 0.35);
+}
+
+.atelier-directions-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.atelier-directions-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* =========================================
+   2. Right Column: Minimalist Luxury Map
+   ========================================= */
+.atelier-map-col {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.minimalist-map-card {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  background: #fdfbf7;
+  border: 1px solid #eee5d8;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 16px 45px rgba(45, 35, 20, 0.06);
+}
+
+/* Blueprint Dot Grid */
+.map-dot-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#d6c7b2 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+  opacity: 0.65;
+}
+
+/* Landmark Block (Top Left) */
+.map-landmark-block {
+  position: absolute;
+  top: 36px;
+  left: 36px;
+  width: 220px;
+  height: 95px;
+  background: #f4eee3;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 2;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+}
+
+.map-landmark-block span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #4a3e30;
+  line-height: 1.4;
+}
+
+/* Street Roads */
+.map-street {
+  position: absolute;
+  background: #eee8de;
+  z-index: 1;
+}
+
+.horizontal-street {
+  top: 48%;
+  left: 0;
+  right: 0;
+  height: 44px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  border-top: 1px dashed #d5c8b5;
+  border-bottom: 1px dashed #d5c8b5;
+}
+
+.vertical-street {
+  top: 0;
+  bottom: 0;
+  left: 64%;
+  width: 44px;
+  transform: translateX(-50%);
+  border-left: 1px dashed #d5c8b5;
+  border-right: 1px dashed #d5c8b5;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 24px;
+}
+
+.street-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #8c7e6c;
+  text-transform: uppercase;
+}
+
+.vertical-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* Pin & Floating Tooltip at Intersection */
+.map-pin-anchor {
+  position: absolute;
+  top: 48%;
+  left: 64%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+.map-pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(196, 139, 130, 0.28);
+  animation: mapPulse 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes mapPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 0;
+  }
+}
+
+.map-pin-core {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #6a1b29;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Floating Tooltip */
+.map-tooltip-card {
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  transform: translateY(-50%);
+  background: #ffffff;
+  border: 1px solid rgba(220, 205, 185, 0.6);
+  border-radius: 10px;
+  padding: 10px 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.tooltip-brand-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1a1610;
+}
+
+.tooltip-sub-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #927546;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   3. Responsive Styles
+   ========================================= */
+@media (max-width: 992px) {
+  .atelier-location-section {
+    padding: 65px 28px 75px 28px;
+  }
+  .atelier-location-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+  .minimalist-map-card {
+    height: 360px;
+  }
+  .map-street.vertical-street {
+    left: 60%;
+  }
+  .map-pin-anchor {
+    left: 60%;
+  }
+}
+
+@media (max-width: 640px) {
+  .atelier-location-section {
+    padding: 50px 18px 60px 18px;
+  }
+  .atelier-title {
+    font-size: 2rem;
+  }
+  .minimalist-map-card {
+    height: 300px;
+  }
+  .map-landmark-block {
+    width: 160px;
+    height: 70px;
+    top: 20px;
+    left: 20px;
+  }
+  .map-landmark-block span {
+    font-size: 0.65rem;
+  }
+  .map-tooltip-card {
+    padding: 8px 12px;
+  }
+  .tooltip-brand-title {
+    font-size: 0.78rem;
+  }
+  .atelier-directions-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

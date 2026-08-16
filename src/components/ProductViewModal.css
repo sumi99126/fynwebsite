@@ -1,0 +1,415 @@
+/* Google Fonts for Product View Modal */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+/* =========================================
+   Clean & Simple Product View Modal
+   ========================================= */
+.fyn-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(18, 14, 10, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+  animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fyn-modal-container {
+  position: relative;
+  width: 100%;
+  max-width: 740px;
+  max-height: calc(100vh - 32px);
+  background: #fdfbf7;
+  border: 1px solid #e7dcce;
+  border-radius: 16px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  animation: modalScaleUp 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Close Button */
+.fyn-modal-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f3ede2;
+  border: 1px solid rgba(196, 161, 98, 0.3);
+  color: #1a1610;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.fyn-modal-close-btn:hover {
+  background: #1a1610;
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+/* Modal Body Grid */
+.fyn-modal-body-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.18fr;
+  min-height: 400px;
+}
+
+/* =========================================
+   1. Left Column: Clean Bottle Visual Stage
+   ========================================= */
+.fyn-modal-visual-col {
+  position: relative;
+  background: linear-gradient(145deg, #f7efe2 0%, #ebe0cf 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 18px 30px 18px;
+  overflow: hidden;
+  border-right: 1px solid #ebdccb;
+}
+
+.fyn-modal-stage {
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.modal-sunlight-aura {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(246, 214, 150, 0.4) 0%, rgba(246, 214, 150, 0) 70%);
+  pointer-events: none;
+}
+
+.modal-bottle-wrap {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: -10px;
+}
+
+.modal-bottle-img {
+  max-width: 160px;
+  max-height: 220px;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 18px rgba(45, 35, 20, 0.22));
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-bottle-wrap:hover .modal-bottle-img {
+  transform: translateY(-4px) scale(1.03);
+}
+
+/* Travertine Slab Pedestal */
+.modal-pedestal-slab {
+  position: relative;
+  width: 180px;
+  height: 18px;
+  border-radius: 4px;
+  z-index: 2;
+  box-shadow: 0 10px 20px rgba(35, 25, 15, 0.12);
+}
+
+.modal-slab-bevel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 4px 4px 0 0;
+}
+
+.modal-slab-shadow {
+  position: absolute;
+  bottom: -5px;
+  left: 10%;
+  width: 80%;
+  height: 7px;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.28) 0%, transparent 70%);
+}
+
+/* =========================================
+   2. Right Column: Simple & Focused Details
+   ========================================= */
+.fyn-modal-info-col {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.modal-kicker {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #927546;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+/* Product Name: Sized slightly larger & elegant weight */
+.modal-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 3px;
+  flex-wrap: wrap;
+}
+
+.modal-product-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem; /* Slightly larger as requested */
+  font-weight: 500;  /* Not overly bold */
+  color: #1a1610;
+  margin: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.modal-urdu-title {
+  font-family: 'Amiri', 'Traditional Arabic', serif;
+  font-size: 1.25rem;
+  color: #927546;
+  font-weight: 500;
+}
+
+.modal-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: #8c7e6c;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Price: Smaller size as requested */
+.modal-price-tag {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.05rem; /* Smaller price */
+  font-weight: 600;
+  color: #6a573f;
+  margin-bottom: 12px;
+}
+
+.modal-desc-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: #554838;
+  margin: 0 0 14px 0;
+}
+
+.modal-notes-box {
+  background: #f7f1e6;
+  border-left: 2px solid #c4a162;
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.modal-notes-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #927546;
+  display: block;
+  margin-bottom: 1px;
+}
+
+.modal-notes-val {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #2b2319;
+  margin: 0;
+}
+
+/* =========================================
+   Simple Minimalist Quantity Stepper & Button
+   ========================================= */
+.modal-action-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Simple Clean Quantity Box */
+.modal-quantity-stepper {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #dcd1c0;
+  border-radius: 4px;
+  background: #ffffff;
+  height: 38px;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.step-btn {
+  width: 30px;
+  height: 100%;
+  background: transparent;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #5c503e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.step-btn:hover {
+  background: #f4ece0;
+  color: #1a1610;
+}
+
+.step-val {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a1610;
+  padding: 0 10px;
+  min-width: 14px;
+  text-align: center;
+  border-left: 1px solid #f0e6d6;
+  border-right: 1px solid #f0e6d6;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Simple ADD TO BAG Button */
+.modal-add-to-bag-btn {
+  flex: 1;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #1a1610;
+  color: #ffffff;
+  border: 1px solid #1a1610;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: all 0.22s ease;
+}
+
+.modal-add-to-bag-btn:hover {
+  background: #967645;
+  border-color: #967645;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(150, 118, 69, 0.3);
+}
+
+.modal-add-to-bag-btn.is-added {
+  background: #2e6644;
+  border-color: #2e6644;
+}
+
+/* =========================================
+   Mobile Responsiveness
+   ========================================= */
+@media (max-width: 768px) {
+  .fyn-modal-body-grid {
+    grid-template-columns: 1fr;
+  }
+  .fyn-modal-visual-col {
+    padding: 20px 16px 24px 16px;
+    border-right: none;
+    border-bottom: 1px solid #ebdccb;
+  }
+  .fyn-modal-stage {
+    height: 200px;
+  }
+  .modal-bottle-img {
+    max-height: 150px;
+  }
+  .fyn-modal-info-col {
+    padding: 20px 16px;
+  }
+  .modal-product-title {
+    font-size: 1.45rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fyn-modal-overlay {
+    padding: 10px;
+  }
+  .fyn-modal-container {
+    border-radius: 12px;
+  }
+  .modal-action-row {
+    flex-direction: row;
+    gap: 8px;
+  }
+  .modal-quantity-stepper {
+    height: 36px;
+  }
+  .modal-add-to-bag-btn {
+    height: 36px;
+    font-size: 0.72rem;
+  }
+}

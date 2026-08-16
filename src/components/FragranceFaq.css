@@ -1,0 +1,202 @@
+/* Google Fonts for FAQs Section */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/* =========================================
+   Simple Luxury FAQs Section (Matching Screenshot)
+   ========================================= */
+.simple-faq-section {
+  position: relative;
+  width: 100%;
+  padding: 75px 40px 85px 40px;
+  background-color: #ffffff;
+  color: #1a1610;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.simple-faq-container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   1. Section Header Block
+   ========================================= */
+.simple-faq-header {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.faq-kicker-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: #a48c68;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* Heading: Exactly matching Our recommendation for your personality */
+.simple-faq-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.55rem, 3.8vw, 3.65rem);
+  font-weight: 400;
+  color: #1a1610;
+  letter-spacing: -0.015em;
+  margin: 0;
+  line-height: 1.18;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faq-title-line {
+  display: block;
+}
+
+/* =========================================
+   2. Clean Accordion Cards List
+   ========================================= */
+.simple-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.simple-faq-card {
+  background: #fdfbf7;
+  border: 1px solid rgba(220, 205, 185, 0.45);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 10px rgba(45, 35, 20, 0.02);
+}
+
+.simple-faq-card:hover {
+  border-color: rgba(196, 161, 98, 0.65);
+  box-shadow: 0 4px 16px rgba(45, 35, 20, 0.05);
+}
+
+.simple-faq-card.faq-open {
+  background: #ffffff;
+  border-color: rgba(196, 161, 98, 0.85);
+  box-shadow: 0 6px 20px rgba(196, 161, 98, 0.1);
+}
+
+/* Question Button */
+.simple-faq-question-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.simple-question-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: #1a1610;
+  margin: 0;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  flex: 1;
+}
+
+/* Circular Plus / Minus Icon */
+.simple-faq-icon-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #f1ebd9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.faq-open .simple-faq-icon-circle {
+  background: #c4a162;
+  transform: rotate(180deg);
+}
+
+.faq-icon-symbol {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #6e604d;
+  line-height: 1;
+}
+
+.faq-open .faq-icon-symbol {
+  color: #ffffff;
+}
+
+/* Answer Collapsible Area */
+.simple-faq-answer-collapse {
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.simple-faq-answer-body {
+  padding: 0 24px 20px 24px;
+  border-top: 1px solid rgba(220, 205, 185, 0.25);
+  margin-top: 2px;
+  padding-top: 14px;
+}
+
+.simple-answer-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: #5c503e;
+  line-height: 1.68;
+  margin: 0;
+}
+
+/* =========================================
+   3. Responsive Styles
+   ========================================= */
+@media (max-width: 768px) {
+  .simple-faq-section {
+    padding: 50px 20px 60px 20px;
+  }
+
+  .simple-faq-header {
+    margin-bottom: 32px;
+  }
+
+  .simple-faq-title {
+    font-size: 1.85rem; /* Reduced heading size on mobile */
+    line-height: 1.25;
+  }
+
+  .simple-faq-question-btn {
+    padding: 16px 18px;
+  }
+
+  .simple-question-text {
+    font-size: 0.9rem;
+  }
+
+  .simple-faq-answer-body {
+    padding: 0 18px 16px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .simple-faq-title {
+    font-size: 1.65rem; /* Even more refined on small mobile */
+  }
+}

@@ -1,0 +1,1149 @@
+/* Google Fonts for Luxury Editorial Typography */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap');
+
+/* =========================================
+   1. 100% Full-Width Luxury Porcelain & Sand Canvas
+   ========================================= */
+.parchment-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f3ece0;
+  background: radial-gradient(ellipse at 50% 40%, #fdfbf7 0%, #f7f1e5 50%, #eadeca 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+  font-family: 'Montserrat', sans-serif;
+  color: #2c251b;
+  box-sizing: border-box;
+}
+
+/* Background Botanical Line-Art Engravings */
+.botanical-bg-left {
+  position: absolute;
+  bottom: -40px;
+  left: -20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.botanical-bg-right {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Dynamic Ambient Glow behind the stage */
+.hero-warm-ambience {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.ambience-core-glow {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 680px;
+  height: 680px;
+  filter: blur(65px);
+  transition: background 0.8s ease;
+}
+
+/* =========================================
+   2. STICKY ON SCROLL Header Navbar (Glassmorphism & Centered Menu)
+   ========================================= */
+.parchment-top-navbar {
+  width: 100%;
+  padding: 20px 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 0;
+  z-index: 100;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: none;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+/* Left: Enlarged Solo Logo Emblem */
+.navbar-logo-solo {
+  display: flex;
+  align-items: center;
+}
+
+.solo-logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(184, 134, 11, 0.4));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.navbar-logo-solo a:hover .solo-logo-img {
+  transform: scale(1.08);
+  filter: drop-shadow(0 6px 16px rgba(184, 134, 11, 0.6));
+}
+
+/* Center: EXACTLY Centered Navigation Menu */
+.navbar-center-menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 46px;
+}
+
+.nav-menu-link {
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #4a4133;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.nav-menu-link:hover,
+.nav-menu-link.active {
+  color: #1a1610;
+  font-weight: 600;
+}
+
+.nav-menu-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #8c7349;
+}
+
+/* Right: Clean Transparent Dark Icons */
+.navbar-right-utils {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-cart-btn-icon {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  color: #1a1610;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.nav-cart-btn-icon:hover {
+  transform: scale(1.12);
+  color: #8c6f3d;
+}
+
+.cart-mini-count {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 17px;
+  height: 17px;
+  background: #1a1610;
+  color: #fdfbf7;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.nav-menu-btn-icon {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  color: #1a1610;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.nav-menu-btn-icon:hover {
+  transform: scale(1.12);
+  color: #8c6f3d;
+}
+
+/* =========================================
+   3. Hero Central Stage (Watermark + Duo Bottles)
+   ========================================= */
+.hero-center-stage {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 70px 0 70px;
+  min-height: 390px;
+  box-sizing: border-box;
+}
+
+/* Upgraded Animated Watermark Typography */
+.large-watermark-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.watermark-top-emblem {
+  color: #a48c68;
+  opacity: 0.45;
+  margin-bottom: -10px;
+  animation: emblemDrift 6s ease-in-out infinite alternate;
+}
+
+@keyframes emblemDrift {
+  0% { transform: translateY(0px); opacity: 0.35; }
+  100% { transform: translateY(-6px); opacity: 0.55; }
+}
+
+.large-watermark-text {
+  font-family: 'Playfair Display', 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  margin-right: -0.24em;
+  color: #a48c68;
+  opacity: 0.32;
+  text-transform: uppercase;
+  user-select: none;
+  white-space: nowrap;
+  text-shadow: 0 4px 20px rgba(184, 134, 11, 0.12);
+}
+
+.large-watermark-text.watermark-animated {
+  animation: watermarkBreath 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes watermarkBreath {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+    letter-spacing: 0.16em;
+  }
+  100% {
+    opacity: 0.32;
+    transform: scale(1) translateY(0);
+    letter-spacing: 0.24em;
+  }
+}
+
+/* Centerpiece Duo Flowing Bottles Stage */
+.bottle-hero-showcase {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 100%;
+}
+
+.duo-bottles-stage {
+  position: relative;
+  width: 530px;
+  height: clamp(310px, 47vh, 440px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Back Bottle (Fluid 3D Wave Perspective Animation) */
+.back-bottle-flow {
+  position: absolute;
+  right: 55px;
+  top: 10px;
+  z-index: 8;
+  width: 100%;
+  max-width: 255px;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+  filter: brightness(0.92) contrast(1.02);
+  animation: fluidWaveBack 7s ease-in-out infinite alternate;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fluidWaveBack {
+  0% {
+    transform: rotate(var(--target-tilt)) translateY(0px) rotate3d(0, 1, 0, 0deg) scale(0.93);
+  }
+  50% {
+    transform: rotate(calc(var(--target-tilt) - 2deg)) translateY(-8px) rotate3d(0, 1, 0, 4deg) scale(0.95);
+  }
+  100% {
+    transform: rotate(calc(var(--target-tilt) + 2deg)) translateY(-16px) rotate3d(0, 1, 0, -4deg) scale(0.96);
+  }
+}
+
+.back-bottle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 22px 38px rgba(50, 40, 25, 0.32));
+  animation: bottleReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.back-shadow {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55%;
+  height: 10px;
+  background: radial-gradient(ellipse at center, rgba(30, 25, 15, 0.28) 0%, transparent 75%);
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+/* Front Bottle (Fluid 3D Wave Foreground Animation) */
+.front-bottle-flow {
+  position: absolute;
+  left: 55px;
+  bottom: 0px;
+  z-index: 15;
+  width: 100%;
+  max-width: 285px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fluidWaveFront 6s ease-in-out infinite alternate;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fluidWaveFront {
+  0% {
+    transform: rotate(var(--target-tilt)) translateY(0px) rotate3d(1, 0, 0, 0deg);
+  }
+  50% {
+    transform: rotate(calc(var(--target-tilt) + 2deg)) translateY(-7px) rotate3d(1, 0, 0, 3deg);
+  }
+  100% {
+    transform: rotate(calc(var(--target-tilt) - 2deg)) translateY(-14px) rotate3d(1, 0, 0, -3deg);
+  }
+}
+
+.front-bottle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 28px 50px rgba(60, 45, 20, 0.38));
+  animation: bottleReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes bottleReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.front-bottle-flow:hover .front-bottle-img {
+  transform: scale(1.04);
+  filter: drop-shadow(0 34px 60px rgba(60, 45, 20, 0.48));
+}
+
+.front-shadow {
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+  height: 14px;
+  background: radial-gradient(ellipse at center, rgba(40, 30, 15, 0.38) 0%, transparent 75%);
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+/* Price & Volume Badge */
+.bottle-info-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.88rem;
+  letter-spacing: 0.12em;
+  color: #3b3225;
+  z-index: 25;
+}
+
+.price-tag {
+  font-weight: 700;
+  color: #1a1610;
+}
+
+.divider-dot {
+  color: #9e8765;
+}
+
+.volume-tag {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: #6e614d;
+}
+
+/* =========================================
+   4. Hero Bottom Bar (Story, CTA, Progress)
+   ========================================= */
+.hero-bottom-bar {
+  width: 100%;
+  padding: 0 70px 32px 70px; /* Reduced top space from bottles, generous bottom padding */
+  margin-top: -6px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1.3fr;
+  align-items: center;
+  position: relative;
+  z-index: 50;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.bar-left-story {
+  max-width: 380px;
+}
+
+.story-editorial-copy {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.06rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #4e4334;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.bar-center-cta {
+  display: flex;
+  justify-content: center;
+  margin: 4px 0; /* Compact top/bottom space for button */
+}
+
+.get-now-luxury-btn {
+  background: transparent;
+  border: 1.5px solid #282218;
+  color: #282218;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 12px 36px; /* Generous button padding */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.get-now-luxury-btn:hover {
+  background: #282218;
+  color: #f7f1e5;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(40, 34, 24, 0.28);
+}
+
+.get-now-luxury-btn:active {
+  transform: translateY(0);
+}
+
+.bar-right-progress {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.progress-bars-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prog-bar-segment {
+  width: 24px;
+  height: 3px;
+  background-color: #b8a88a;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.prog-bar-segment.segment-active {
+  background-color: #c57827;
+  width: 32px;
+}
+
+.prog-bullet-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid #756852;
+  background: transparent;
+}
+
+.prog-bullet-dot.active-bullet {
+  background: #756852;
+}
+
+/* =========================================
+   5. Slide-Out Shopping Cart & Menu Drawers (Clean Standard Style - No Blur)
+   ========================================= */
+.luxury-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.38);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.luxury-drawer-backdrop.drawer-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.luxury-drawer-panel.light-theme {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  bottom: auto;
+  width: calc(100% - 40px);
+  max-width: 400px;
+  height: auto;
+  max-height: calc(100vh - 40px);
+  background: #ffffff;
+  color: #1a1610;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(196, 161, 98, 0.35);
+  border-radius: 16px;
+  transform: translateX(120%);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  z-index: 10000;
+  box-sizing: border-box;
+}
+
+.luxury-drawer-panel.panel-visible {
+  transform: translateX(0);
+}
+
+.drawer-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #eee8dc;
+  flex-shrink: 0;
+}
+
+.drawer-brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.drawer-logo-img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.drawer-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-brand-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.94rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #1a1610;
+  line-height: 1.1;
+}
+
+.drawer-brand-subtitle {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: #8c7349;
+  margin-top: 2px;
+}
+
+.drawer-close-btn {
+  background: #f7f4ee;
+  border: 1px solid #e2dacd;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  color: #3d3427;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.drawer-close-btn:hover {
+  background: #1a1610;
+  color: #ffffff;
+  border-color: #1a1610;
+}
+
+.concierge-content-container {
+  flex: initial;
+  max-height: min(440px, 55vh);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 16px 0 0 0;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.concierge-card-block {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(160, 130, 80, 0.18);
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 4px 14px rgba(60, 45, 20, 0.04);
+}
+
+.concierge-block-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #8c7349;
+  border-bottom: 1px solid rgba(160, 130, 80, 0.15);
+  padding-bottom: 6px;
+}
+
+.contact-detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.detail-icon-box {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(184, 134, 11, 0.1);
+  color: #8c6f3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.detail-icon-box.gold-tint {
+  background: rgba(184, 134, 11, 0.15);
+  color: #8c6f3d;
+}
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.detail-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #7a6e5b;
+}
+
+.detail-val-link {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #1a1610;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.detail-val-link:hover {
+  color: #8c7349;
+  text-decoration: underline;
+}
+
+.detail-text {
+  font-size: 0.8rem;
+  color: #3b3225;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.drawer-footer-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(160, 130, 80, 0.2);
+}
+
+.drawer-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #8c7349;
+}
+
+.drawer-copyright {
+  font-size: 0.68rem;
+  color: #8a7c68;
+}
+
+/* Cart Items List */
+.cart-items-container {
+  flex: initial;
+  max-height: min(320px, 45vh);
+  overflow-y: auto;
+  margin: 12px 0;
+  padding-right: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(196, 161, 98, 0.4) transparent;
+}
+
+.cart-items-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cart-items-container::-webkit-scrollbar-thumb {
+  background: rgba(196, 161, 98, 0.45);
+  border-radius: 4px;
+}
+
+.cart-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+  text-align: center;
+  color: #7a6e5b;
+}
+
+.empty-cart-icon {
+  opacity: 0.35;
+  margin-bottom: 10px;
+  color: #8c7349;
+}
+
+.empty-text {
+  font-size: 0.84rem;
+  margin-bottom: 14px;
+}
+
+.empty-browse-btn {
+  background: #1a1610;
+  color: #fbf7ee;
+  border: none;
+  padding: 9px 22px;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.empty-browse-btn:hover {
+  background: #8c7349;
+}
+
+.cart-item-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(160, 130, 80, 0.2);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 3px 10px rgba(60, 45, 20, 0.04);
+}
+
+.cart-item-img-frame {
+  width: 52px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fdfbf7;
+  border-radius: 6px;
+  border: 1px solid rgba(160, 130, 80, 0.12);
+  flex-shrink: 0;
+}
+
+.cart-item-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cart-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cart-item-headline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-item-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #1a1610;
+  margin: 0;
+}
+
+.cart-remove-btn {
+  background: transparent;
+  border: none;
+  color: #a49682;
+  cursor: pointer;
+  padding: 2px;
+  transition: color 0.2s ease;
+}
+
+.cart-remove-btn:hover {
+  color: #d94343;
+}
+
+.cart-item-sub {
+  font-size: 0.68rem;
+  color: #7a6e5b;
+}
+
+.cart-item-price {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #8c6f3d;
+  margin: 2px 0 6px 0;
+}
+
+.cart-qty-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #f4ecdc;
+  border: 1px solid rgba(160, 130, 80, 0.2);
+  border-radius: 20px;
+  padding: 2px 10px;
+  width: fit-content;
+}
+
+.qty-btn {
+  background: transparent;
+  border: none;
+  color: #1a1610;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+.qty-count {
+  font-size: 0.78rem;
+  font-weight: 600;
+  min-width: 14px;
+  text-align: center;
+  color: #1a1610;
+}
+
+.cart-footer-checkout-block {
+  border-top: 1px solid rgba(160, 130, 80, 0.22);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cart-subtotal-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subtotal-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #615543;
+}
+
+.subtotal-amount {
+  font-family: 'Cinzel', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1610;
+}
+
+.cart-shipping-notice {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: #8c6f3d;
+}
+
+.proceed-checkout-btn {
+  background: #1a1610;
+  color: #fdfbf7;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(26, 22, 16, 0.22);
+  transition: all 0.3s ease;
+}
+
+.proceed-checkout-btn:hover {
+  background: #8c6f3d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(140, 111, 61, 0.35);
+}
+
+.continue-shopping-link {
+  background: transparent;
+  border: none;
+  color: #7a6e5b;
+  font-size: 0.75rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.continue-shopping-link:hover {
+  color: #1a1610;
+}
+
+/* =========================================
+   6. Responsive Media Queries
+   ========================================= */
+@media (max-width: 1024px) {
+  .parchment-top-navbar {
+    padding: 14px 36px;
+  }
+
+  .navbar-center-menu {
+    gap: 24px;
+  }
+
+  .hero-center-stage {
+    padding: 10px 30px;
+  }
+
+  .duo-bottles-stage {
+    width: 440px;
+  }
+
+  .hero-bottom-bar {
+    padding: 10px 36px 18px;
+  }
+}
+
+@media (max-width: 860px) {
+  .parchment-hero-section {
+    min-height: auto;
+    height: auto;
+    padding-bottom: 12px;
+  }
+
+  .parchment-top-navbar {
+    padding: 14px 22px;
+  }
+
+  .solo-logo-img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .navbar-center-menu {
+    display: none;
+  }
+
+  .hero-center-stage {
+    padding: 6px 16px 0 16px;
+    min-height: 270px;
+  }
+
+  .large-watermark-text {
+    font-size: clamp(2.8rem, 10vw, 4.4rem) !important;
+    letter-spacing: 0.12em !important;
+    margin-right: -0.12em !important;
+    opacity: 0.22;
+  }
+
+  .duo-bottles-stage {
+    width: 270px;
+    height: 265px;
+  }
+
+  .front-bottle-flow {
+    max-width: 165px;
+    left: 12px;
+  }
+
+  .back-bottle-flow {
+    max-width: 148px;
+    right: 12px;
+  }
+
+  .hero-bottom-bar {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    text-align: center;
+    padding: 14px 20px 38px; /* Comfortable bottom spacing */
+    margin-top: 4px;
+  }
+
+  .bar-left-story {
+    max-width: 100%;
+  }
+
+  .bar-right-progress {
+    justify-content: center;
+  }
+
+  .luxury-drawer-panel.light-theme {
+    max-width: 100%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .parchment-hero-section {
+    min-height: auto;
+    height: auto;
+    padding-bottom: 12px;
+  }
+
+  .parchment-top-navbar {
+    padding: 12px 16px;
+  }
+
+  .solo-logo-img {
+    width: 48px; /* Larger logo on mobile as requested */
+    height: 48px;
+  }
+
+  .hero-center-stage {
+    padding: 4px 12px 0 12px;
+    min-height: 240px;
+  }
+
+  .large-watermark-text {
+    font-size: clamp(2.4rem, 9.5vw, 3.6rem) !important;
+    letter-spacing: 0.1em !important;
+    margin-right: -0.1em !important;
+    opacity: 0.2;
+  }
+
+  .duo-bottles-stage {
+    width: 235px;
+    height: 230px;
+  }
+
+  .front-bottle-flow {
+    max-width: 142px;
+    left: 8px;
+  }
+
+  .back-bottle-flow {
+    max-width: 126px;
+    right: 8px;
+  }
+
+  .hero-bottom-bar {
+    padding: 12px 14px 34px; /* Enhanced bottom padding on small mobile */
+    margin-top: 2px;
+    gap: 8px;
+  }
+
+  .bar-story-title {
+    font-size: 0.94rem;
+    margin-bottom: 3px;
+  }
+
+  .bar-story-sub {
+    font-size: 0.72rem;
+    line-height: 1.4;
+  }
+}

@@ -1,0 +1,551 @@
+/* Google Luxury Serif & Clean Sans Typography */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* =========================================
+   Signature Parfumerie Collection Section
+   ========================================= */
+.sig-collection-section {
+  position: relative;
+  width: 100%;
+  padding: 95px 70px 110px 70px;
+  background-color: #fbfaf7;
+  color: #1a1610;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-top: 1px solid rgba(224, 215, 200, 0.6);
+}
+
+.sig-bg-glow {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(230, 206, 160, 0.12) 0%, rgba(251, 250, 247, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sig-container {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+/* =========================================
+   1. Section Header Row
+   ========================================= */
+.sig-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 36px;
+  margin-bottom: 48px;
+}
+
+.sig-header-left {
+  max-width: 620px;
+}
+
+.sig-kicker-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 12px;
+}
+
+.sig-sparkle-icon {
+  color: #bfa063;
+}
+
+.sig-kicker {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: #a48c68;
+  text-transform: uppercase;
+}
+
+.sig-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.3rem, 3.8vw, 3.3rem);
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: -0.015em;
+  color: #1a1610;
+  margin: 0 0 14px 0;
+}
+
+.sig-title-accent {
+  font-style: italic;
+  color: #927546;
+}
+
+.sig-subtitle {
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: #796e5d;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 540px;
+}
+
+/* Right Filter Bar */
+.sig-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.sig-filter-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.sig-filter-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #968672;
+}
+
+.sig-filter-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.sig-pill-btn {
+  background: #ffffff;
+  border: 1px solid #dfd7cb;
+  color: #635848;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  white-space: nowrap;
+}
+
+.sig-pill-btn:hover {
+  border-color: #c4a162;
+  color: #1a1610;
+  background: #fdfbf7;
+}
+
+.sig-pill-btn.is-active {
+  background-color: #c4a162;
+  border-color: #c4a162;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(196, 161, 98, 0.38);
+}
+
+/* =========================================
+   2. 4-Column Luxury Products Grid
+   ========================================= */
+.sig-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+  margin-bottom: 56px;
+}
+
+.sig-product-card {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  cursor: pointer;
+  animation: sigCardFadeIn 0.6s ease-out backwards;
+}
+
+@keyframes sigCardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   3. Studio Stage Photo Frame
+   ========================================= */
+.sig-image-stage {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background: radial-gradient(ellipse at 50% 32%, #fbf8f2 0%, #f3ece0 48%, #e8dcce 100%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  border: 1px solid rgba(214, 202, 185, 0.55);
+  box-shadow: 0 4px 18px rgba(60, 45, 20, 0.04);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.45s ease;
+}
+
+.sig-product-card:hover .sig-image-stage {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 42px rgba(60, 45, 20, 0.12);
+  border-color: rgba(196, 161, 98, 0.55);
+}
+
+/* Card Tag (e.g. BESTSELLER, EXCLUSIVE) */
+.sig-card-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(26, 22, 16, 0.88);
+  backdrop-filter: blur(8px);
+  color: #d9bf8f;
+  padding: 4px 10px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  z-index: 20;
+  border: 1px solid rgba(217, 191, 143, 0.25);
+}
+
+/* Sunlight and Silk Veil overlay */
+.sig-sunlight-beam {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.1) 40%, transparent 65%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sig-silk-veil {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(255, 245, 228, 0.5) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Central Bottle Wrapper */
+.sig-bottle-wrapper {
+  position: relative;
+  width: 100%;
+  height: 275px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  margin-bottom: -18px;
+}
+
+.sig-bottle-image {
+  max-width: 175px;
+  height: 92%;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 30px rgba(50, 36, 16, 0.28));
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), filter 0.45s ease;
+}
+
+.sig-product-card:hover .sig-bottle-image {
+  transform: scale(1.045) translateY(-5px);
+  filter: drop-shadow(0 26px 42px rgba(50, 36, 16, 0.38));
+}
+
+/* Travertine Stone Pedestal Base */
+.sig-travertine-pedestal {
+  position: relative;
+  width: 86%;
+  height: 52px;
+  background-color: #ded1be;
+  border-top: 2px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 8px 18px rgba(50, 40, 25, 0.15), inset 0 2px 5px rgba(255, 255, 255, 0.35);
+  z-index: 5;
+  margin-bottom: 24px;
+}
+
+.sig-pedestal-bevel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+}
+
+.sig-pedestal-shadow {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+  height: 14px;
+  background: radial-gradient(ellipse at center, rgba(35, 25, 12, 0.46) 0%, transparent 75%);
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+/* Quick Add Button */
+.sig-quick-add-btn {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%) translateY(24px);
+  opacity: 0;
+  width: 88%;
+  background: #1a1610;
+  color: #ffffff;
+  border: none;
+  padding: 11px 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  cursor: pointer;
+  z-index: 25;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sig-product-card:hover .sig-quick-add-btn {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.sig-quick-add-btn:hover {
+  background: #c4a162;
+  box-shadow: 0 8px 24px rgba(196, 161, 98, 0.4);
+}
+
+.sig-quick-add-btn.added-success {
+  background: #237844;
+}
+
+.sig-add-arrow {
+  transition: transform 0.2s ease;
+}
+
+.sig-quick-add-btn:hover .sig-add-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* =========================================
+   4. Bottom Meta Row (Reference Match)
+   ========================================= */
+.sig-meta-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 15px;
+  gap: 14px;
+}
+
+.sig-meta-left {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  min-width: 0;
+}
+
+.sig-product-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.sig-product-name {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #1a1610;
+  letter-spacing: 0.01em;
+}
+
+.sig-product-urdu {
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: #3b3225;
+  font-family: inherit;
+}
+
+.sig-product-notes {
+  font-size: 0.72rem;
+  color: #8c7e6c;
+  margin: 4px 0 0 0;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Right Side Price and Volume */
+.sig-meta-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.sig-product-price {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a1610;
+  letter-spacing: 0.02em;
+}
+
+.sig-product-vol {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #aa9b87;
+  letter-spacing: 0.06em;
+  margin-top: 2px;
+}
+
+/* =========================================
+   5. Bottom Assurance Feature Bar
+   ========================================= */
+.sig-bottom-assurance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 24px 30px;
+  background: #ffffff;
+  border: 1px solid #e8e0d4;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  margin-top: 20px;
+}
+
+.assurance-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.assurance-bullet {
+  color: #c4a162;
+  font-size: 0.82rem;
+}
+
+.assurance-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #4f4436;
+  text-transform: uppercase;
+}
+
+.assurance-divider {
+  width: 1px;
+  height: 18px;
+  background-color: #ded6c8;
+}
+
+/* =========================================
+   6. Responsive Styling
+   ========================================= */
+@media (max-width: 1200px) {
+  .sig-collection-section {
+    padding: 80px 40px 95px 40px;
+  }
+
+  .sig-products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sig-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .sig-header-right {
+    align-items: flex-start;
+  }
+
+  .sig-filter-bar {
+    align-items: flex-start;
+  }
+
+  .sig-filter-pills {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 860px) {
+  .sig-collection-section {
+    padding: 65px 24px 80px 24px;
+  }
+
+  .sig-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .sig-image-stage {
+    height: 330px;
+  }
+
+  .sig-bottle-wrapper {
+    height: 230px;
+  }
+
+  .sig-bottle-image {
+    max-width: 145px;
+  }
+
+  .sig-bottom-assurance {
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 20px 24px;
+  }
+
+  .assurance-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .sig-collection-section {
+    padding: 50px 16px 70px 16px;
+  }
+
+  .sig-products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sig-pill-btn {
+    padding: 8px 14px;
+    font-size: 0.68rem;
+  }
+
+  .sig-product-notes {
+    white-space: normal;
+  }
+}

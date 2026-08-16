@@ -1,0 +1,340 @@
+/* Google Fonts for Refined Moments */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap');
+
+/* =========================================
+   Refined Moments Bento Showcase Section
+   ========================================= */
+.refined-moments-section {
+  position: relative;
+  width: 100%;
+  padding: 85px 40px 95px 40px;
+  background-color: #ffffff;
+  color: #1a1610;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Decorative Gold Waves */
+.moments-decor-waves {
+  position: absolute;
+  top: 45px;
+  right: 50px;
+  width: 70px;
+  height: auto;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 1;
+  animation: waveSubtleFloat 6s ease-in-out infinite alternate;
+}
+
+@keyframes waveSubtleFloat {
+  0% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+  100% { transform: translateY(-8px) rotate(2deg); opacity: 0.95; }
+}
+
+.refined-moments-container {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   1. Section Header Block
+   ========================================= */
+.refined-moments-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.moments-pill-badge {
+  display: inline-block;
+  background-color: #f7ebd9;
+  border: 1px solid rgba(196, 161, 98, 0.45);
+  padding: 6px 18px;
+  border-radius: 30px;
+  margin-bottom: 14px;
+  transition: all 0.3s ease;
+}
+
+.moments-pill-badge:hover {
+  border-color: #c4a162;
+  box-shadow: 0 4px 14px rgba(196, 161, 98, 0.25);
+  transform: translateY(-1px);
+}
+
+.moments-pill-badge span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #927546;
+  text-transform: uppercase;
+}
+
+/* Main Section Heading */
+.refined-moments-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.55rem, 3.8vw, 3.65rem);
+  font-weight: 400;
+  color: #1a1610;
+  letter-spacing: -0.015em;
+  margin: 0;
+  line-height: 1.18;
+}
+
+.refined-moments-title .title-highlight {
+  color: #8c7247;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* =========================================
+   2. 5-Card Bento Grid Layout
+   ========================================= */
+.moments-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr 1fr;
+  align-items: start;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Left & Right Side Columns (2 Stacked Cards) */
+.moments-side-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.moments-center-col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* =========================================
+   3. Luxury Lifestyle Cards
+   ========================================= */
+.moment-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(45, 35, 20, 0.1);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
+  background-color: #2a231b;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.moment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 48px rgba(45, 35, 20, 0.22);
+}
+
+/* Specific Card Heights */
+.moments-side-col .moment-card {
+  height: 250px;
+}
+
+.card-center-hero {
+  height: 512px;
+}
+
+/* Background Image Layer (Always Visible & Smoothly Scaled) */
+.moment-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), filter 0.45s ease;
+  filter: brightness(0.92) contrast(1.04);
+}
+
+.moment-card:hover .moment-card-bg {
+  transform: scale(1.06);
+  filter: brightness(0.98) contrast(1.06);
+}
+
+/* Bottom Glass Gradient Overlay with Narrative & Arrow Button */
+.moment-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 22px 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 12, 9, 0) 0%,
+    rgba(15, 12, 9, 0.6) 35%,
+    rgba(15, 12, 9, 0.9) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.hero-overlay {
+  padding: 28px 24px;
+}
+
+.moment-card-copy {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 82%;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.01em;
+}
+
+.hero-copy {
+  font-size: 0.94rem;
+  line-height: 1.55;
+  max-width: 84%;
+}
+
+/* Luxury Gold Circular Arrow Button */
+.moment-arrow-btn {
+  background: #967645;
+  color: #ffffff;
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: 12px;
+  box-shadow: 0 4px 14px rgba(150, 118, 69, 0.35);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-arrow-btn {
+  width: 44px;
+  height: 44px;
+}
+
+.moment-arrow-btn:hover {
+  background: #1a1610;
+  color: #fbf7ee;
+  transform: scale(1.12) translateX(2px);
+  box-shadow: 0 6px 20px rgba(26, 22, 16, 0.5);
+}
+
+/* =========================================
+   4. Center CTA Button: Discover Collection
+   ========================================= */
+.moments-center-cta {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.discover-collection-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #967645;
+  color: #ffffff;
+  border: 1px solid #8c6f3d;
+  padding: 13px 36px;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(150, 118, 69, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.discover-collection-btn:hover {
+  background: #1a1610;
+  color: #fbf7ee;
+  border-color: #1a1610;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
+}
+
+.discover-collection-btn svg {
+  transition: transform 0.25s ease;
+}
+
+.discover-collection-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* =========================================
+   5. Responsive Styles
+   ========================================= */
+@media (max-width: 900px) {
+  .refined-moments-section {
+    padding: 50px 18px 55px 18px;
+  }
+
+  .refined-moments-title {
+    font-size: 2.1rem;
+  }
+
+  .moments-decor-waves {
+    width: 50px;
+    right: 20px;
+    top: 25px;
+  }
+
+  /* Robust, clean mobile stacking with center image fully visible */
+  .moments-grid-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .moments-side-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .moments-center-col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .card-center-hero {
+    height: 280px;
+    width: 100%;
+  }
+
+  .moments-side-col .moment-card {
+    height: 200px;
+    width: 100%;
+  }
+
+  .moments-center-cta {
+    margin-top: 24px;
+  }
+
+  .discover-collection-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 0.82rem;
+  }
+}

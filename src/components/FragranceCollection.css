@@ -1,0 +1,469 @@
+/* Google Fonts for Editorial Luxury Typography */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* =========================================
+   Editorial Fragrance Recommendation Section
+   ========================================= */
+.editorial-collection-section {
+  position: relative;
+  width: 100%;
+  padding: 45px 40px 85px 40px;
+  background-color: #ffffff;
+  color: #1a1610;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.collection-bg-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(235, 215, 175, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.collection-wrapper {
+  position: relative;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+/* =========================================
+   1. Section Header Row
+   ========================================= */
+.editorial-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+/* Left Side Header */
+.editorial-header-left {
+  text-align: left;
+  flex-shrink: 0;
+}
+
+.kicker-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.editorial-kicker {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: #a48c68;
+  text-transform: uppercase;
+}
+
+/* Enhanced 2-Line Editorial Title */
+.editorial-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.15rem, 3.3vw, 3.05rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: #1a1610;
+  margin: 0;
+}
+
+.editorial-title .title-line {
+  display: block;
+  white-space: nowrap;
+}
+
+.editorial-title .title-highlight {
+  font-style: italic;
+  color: #8c7247;
+}
+
+/* Right Side: Clean Single-Line Tabs Without Any Visible Scrollbar */
+.editorial-header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.tabs-scroll-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  padding: 4px 0;
+}
+
+/* Completely Hide Scrollbar */
+.tabs-scroll-container::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.editorial-tabs-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.editorial-tab-pill {
+  background: #ffffff;
+  border: 1px solid #ded5c7;
+  color: #635848;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.69rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 8px 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+}
+
+.editorial-tab-pill:hover {
+  border-color: #c4a162;
+  color: #1a1610;
+  background-color: #fdfcf9;
+}
+
+/* Active Tab Styled in Gold Accent */
+.editorial-tab-pill.active-pill {
+  background-color: #c4a162;
+  border-color: #c4a162;
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(196, 161, 98, 0.38);
+}
+
+/* =========================================
+   2. 4-Column Editorial Products Grid (4 in a Row, Equal Spacing)
+   ========================================= */
+.editorial-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.editorial-product-card {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  cursor: pointer;
+  min-width: 0;
+  box-sizing: border-box;
+  animation: cardFadeIn 0.5s ease-out backwards;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   3. Compact Luxury Studio Frame with Rounded Corners & Soft Shadow
+   ========================================= */
+.editorial-image-frame {
+  position: relative;
+  width: 100%;
+  height: 290px;
+  background: radial-gradient(ellipse at 50% 30%, #fbf8f2 0%, #f4ede2 48%, #e8dcce 100%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 8px;
+  border: 1px solid rgba(210, 195, 175, 0.45);
+  box-shadow: 0 4px 16px rgba(45, 35, 20, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.editorial-product-card:hover .editorial-image-frame {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(45, 35, 20, 0.14);
+  border-color: rgba(196, 161, 98, 0.7);
+}
+
+/* Soft Sunlight Ray across studio */
+.editorial-sunlight-ray {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.1) 40%, transparent 65%);
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.4s ease;
+}
+
+.editorial-product-card:hover .editorial-sunlight-ray {
+  opacity: 0.85;
+}
+
+/* Soft Silk Drape Background Texture */
+.editorial-backdrop-drape {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(255, 246, 230, 0.55) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Central Bottle Showcase */
+.editorial-bottle-stage {
+  position: relative;
+  width: 100%;
+  height: 205px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  margin-bottom: -14px;
+}
+
+.editorial-bottle-img {
+  max-width: 128px;
+  height: 86%;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 22px rgba(50, 36, 16, 0.24));
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), filter 0.45s ease;
+}
+
+.editorial-product-card:hover .editorial-bottle-img {
+  transform: scale(1.06) translateY(-5px);
+  filter: drop-shadow(0 22px 36px rgba(50, 36, 16, 0.38));
+}
+
+/* Travertine Stone Pedestal Slab */
+.travertine-pedestal-slab {
+  position: relative;
+  width: 86%;
+  height: 38px;
+  background-color: #ded1be;
+  border-top: 2px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 6px 14px rgba(50, 40, 25, 0.13), inset 0 1px 4px rgba(255, 255, 255, 0.35);
+  z-index: 5;
+  margin-bottom: 15px;
+}
+
+.slab-top-bevel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+}
+
+.bottle-travertine-shadow {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+  height: 12px;
+  background: radial-gradient(ellipse at center, rgba(35, 25, 12, 0.44) 0%, transparent 75%);
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+/* Quick Add To Bag Hover Action Button */
+.editorial-quick-add {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  opacity: 0;
+  width: 88%;
+  background: #1a1610;
+  color: #ffffff;
+  border: none;
+  padding: 9px 12px;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 25;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-product-card:hover .editorial-quick-add {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.editorial-quick-add:hover {
+  background: #c4a162;
+  box-shadow: 0 6px 18px rgba(196, 161, 98, 0.4);
+}
+
+.editorial-quick-add.is-added {
+  background: #237844;
+}
+
+/* =========================================
+   4. Bottom Meta Information
+   ========================================= */
+.editorial-meta-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 10px;
+  gap: 8px;
+}
+
+.meta-left-details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  min-width: 0;
+}
+
+.product-name-urdu {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.name-en {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1a1610;
+  letter-spacing: 0.01em;
+}
+
+.name-ar {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #3b3225;
+}
+
+.product-olfactory-notes {
+  font-size: 0.67rem;
+  color: #8c7e6c;
+  margin: 2px 0 0 0;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Right Side Price and Volume */
+.meta-right-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.product-exact-price {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #1a1610;
+  letter-spacing: 0.02em;
+}
+
+.product-volume-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #aa9b87;
+  letter-spacing: 0.05em;
+  margin-top: 1px;
+}
+
+/* =========================================
+   5. Responsive Media Queries
+   ========================================= */
+@media (max-width: 1080px) {
+  .editorial-collection-section {
+    padding: 16px 24px 75px 24px;
+  }
+
+  .editorial-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .editorial-header-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .editorial-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .editorial-collection-section {
+    padding: 16px 16px 55px 16px; /* Gentle, comfortable top spacing */
+    margin-top: 0;
+  }
+
+  .editorial-header-row {
+    margin-top: 0 !important;
+    margin-bottom: 12px !important;
+    gap: 8px !important;
+  }
+
+  .kicker-badge {
+    margin-bottom: 2px !important;
+  }
+
+  .editorial-title {
+    font-size: 1.75rem;
+    line-height: 1.12;
+  }
+
+  .editorial-products-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .editorial-tab-pill {
+    padding: 6px 12px;
+    font-size: 0.64rem;
+  }
+
+  .product-olfactory-notes {
+    white-space: normal;
+  }
+}

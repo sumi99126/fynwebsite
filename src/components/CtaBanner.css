@@ -1,0 +1,224 @@
+/* Google Fonts for Full-Width Light Golden Parallax CTA */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap');
+
+/* =========================================
+   Full-Width Wide Champagne CTA Section (Reduced Compact Height)
+   ========================================= */
+.fyn-fullwidth-parallax-cta {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  min-height: 380px; /* Reduced compact height as requested */
+  padding: 55px 40px; /* Reduced vertical padding */
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #f1e4d0;
+}
+
+/* Background Layer Anchored to Bottom to Show Reflection and Bottles */
+.parallax-bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  will-change: transform;
+  pointer-events: none;
+  transition: transform 0.1s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.parallax-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right 88%; /* Anchors bottles and reflection cleanly */
+  filter: brightness(1) contrast(1.02);
+}
+
+/* Soft Ambient Gradient Overlay on Left for High Readability */
+.parallax-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(244, 233, 215, 0.96) 0%,
+    rgba(244, 233, 215, 0.85) 36%,
+    rgba(244, 233, 215, 0.25) 58%,
+    rgba(244, 233, 215, 0.02) 76%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+/* Main Container */
+.fyn-parallax-cta-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+/* Left-Aligned Editorial Content */
+.fyn-parallax-cta-content {
+  max-width: 540px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Kicker */
+.parallax-cta-kicker {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  color: #927546;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+/* Headline */
+.parallax-cta-title {
+  font-family: 'Playfair Display', 'Cinzel', serif;
+  font-size: clamp(1.85rem, 2.8vw, 2.45rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: #1a1610;
+  margin: 0 0 12px 0;
+  line-height: 1.18;
+}
+
+.parallax-title-line {
+  display: block;
+}
+
+/* Subtitle Narrative */
+.parallax-cta-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.94rem;
+  font-weight: 400;
+  color: #5a4b36;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+  max-width: 460px;
+  letter-spacing: 0.01em;
+}
+
+/* Action Button */
+.parallax-cta-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #1a1610;
+  color: #fbf7ee;
+  border: 1px solid rgba(196, 161, 98, 0.4);
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.parallax-cta-action-btn:hover {
+  background: #967645;
+  color: #ffffff;
+  border-color: #967645;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(150, 118, 69, 0.38);
+}
+
+.parallax-cta-action-btn svg {
+  transition: transform 0.25s ease;
+}
+
+.parallax-cta-action-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* =========================================
+   Responsive Styles
+   ========================================= */
+@media (max-width: 900px) {
+  .fyn-fullwidth-parallax-cta {
+    padding: 50px 28px;
+    min-height: 340px;
+  }
+  .fyn-parallax-cta-container {
+    justify-content: center;
+  }
+  .fyn-parallax-cta-content {
+    max-width: 520px;
+    align-items: center;
+    text-align: center;
+  }
+  .parallax-cta-title {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+  .parallax-cta-desc {
+    text-align: center;
+  }
+  .parallax-cta-action-btn {
+    align-self: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .fyn-fullwidth-parallax-cta {
+    padding: 45px 20px;
+    min-height: 300px;
+  }
+  .parallax-gradient-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(244, 233, 215, 0.95) 0%,
+      rgba(244, 233, 215, 0.88) 55%,
+      rgba(244, 233, 215, 0.55) 85%,
+      transparent 100%
+    );
+  }
+  .parallax-bg-image {
+    object-position: center bottom;
+  }
+  .fyn-parallax-cta-content {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .parallax-cta-title {
+    font-size: 1.5rem;
+    line-height: 1.22;
+    text-align: center;
+  }
+  .parallax-cta-desc {
+    font-size: 0.88rem;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+  .parallax-cta-action-btn {
+    width: auto;
+    min-width: 240px;
+    justify-content: center;
+    padding: 12px 26px;
+    font-size: 0.78rem;
+    align-self: center;
+  }
+}
