@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './AtelierLocation.css';
 
 export const AtelierLocation: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isInView, setIsInView] = useState<boolean>(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      { threshold: 0.18, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleDirections = () => {
     window.open(
       'https://maps.google.com/?q=Al+Hamra+Luxury+Center+Kuwait+City',
@@ -10,7 +30,7 @@ export const AtelierLocation: React.FC = () => {
   };
 
   return (
-    <section className="atelier-location-section" id="atelier">
+    <section className={`atelier-location-section ${isInView ? 'in-view' : ''}`} id="atelier" ref={sectionRef}>
       <div className="atelier-location-container">
         <div className="atelier-location-grid">
           {/* Left Column: Kuwait Atelier Details */}

@@ -20,6 +20,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   background-color: var(--bg-primary);
   color: var(--text-main);
@@ -106,5 +110,16 @@ html, body {
   100% {
     transform: translateX(200%) skewX(-25deg);
     opacity: 0;
+  }
+}
+
+@keyframes headingRevealFade {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -1,9 +1,29 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './EssenceOfLuxury.css';
 
 export const EssenceOfLuxury: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isInView, setIsInView] = useState<boolean>(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      { threshold: 0.18, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="essence-luxury-section" id="about">
+    <section className={`essence-luxury-section ${isInView ? 'in-view' : ''}`} id="about" ref={sectionRef}>
       <div className="essence-luxury-container">
         {/* Left Side (50% Column): Large Editorial Photo Collage */}
         <div className="essence-left-col">

@@ -8,30 +8,42 @@ export const ScentOfElegance: React.FC = () => {
   const [isInView, setIsInView] = useState<boolean>(false);
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      { threshold: 0.18, rootMargin: '0px 0px -60px 0px' }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
     const handleScroll = () => {
       if (!sectionRef.current) return;
       const rect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Check if section is visible in viewport
       if (rect.top < windowHeight && rect.bottom > 0) {
-        setIsInView(true);
-        // Calculate scroll offset relative to center of viewport
         const centerDistance = rect.top + rect.height / 2 - windowHeight / 2;
-        const normalized = centerDistance / windowHeight; // e.g. -0.5 to 0.5
-        setScrollYOffset(normalized * -32); // Moves up/down by ~16px
-        setScrollRotate(normalized * -3.5); // Tilts gently by ~2-3deg
+        const normalized = centerDistance / windowHeight;
+        setScrollYOffset(normalized * -32);
+        setScrollRotate(normalized * -3.5);
       }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial check
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
-    <section className="scent-elegance-section" id="craftsmanship" ref={sectionRef}>
+    <section className={`scent-elegance-section ${isInView ? 'in-view' : ''}`} id="craftsmanship" ref={sectionRef}>
       <div className="scent-elegance-container">
         {/* Section Header */}
         <div className="scent-elegance-header">
@@ -44,12 +56,12 @@ export const ScentOfElegance: React.FC = () => {
           </p>
         </div>
 
-        {/* Interactive Feature Anatomy Stage */}
-        <div className="scent-anatomy-stage">
+        {/* Interactive Feature Anatomy Stage with Alternating Zoom & Fade Animation */}
+        <div className={`scent-anatomy-stage ${isInView ? 'in-view' : ''}`}>
           {/* Left Column Features with Guidelines */}
           <div className="anatomy-features-col left-features">
-            {/* Feature 1 */}
-            <div className="anatomy-feature-item left-item item-top">
+            {/* Step 1: Left 1 */}
+            <div className="anatomy-feature-item left-item item-top point-anim-1">
               <div className="feature-text-block">
                 <h4 className="feature-item-heading">Direct delivery to your door.</h4>
                 <p className="feature-item-desc">Sustainable bottles and recyclable materials.</p>
@@ -59,8 +71,8 @@ export const ScentOfElegance: React.FC = () => {
               </div>
             </div>
 
-            {/* Feature 2 */}
-            <div className="anatomy-feature-item left-item item-middle">
+            {/* Step 3: Left 2 */}
+            <div className="anatomy-feature-item left-item item-middle point-anim-3">
               <div className="feature-text-block">
                 <h4 className="feature-item-heading">Long-Lasting Scents</h4>
                 <p className="feature-item-desc">Sustainable bottles and recyclable materials.</p>
@@ -70,8 +82,8 @@ export const ScentOfElegance: React.FC = () => {
               </div>
             </div>
 
-            {/* Feature 3 */}
-            <div className="anatomy-feature-item left-item item-bottom">
+            {/* Step 5: Left 3 */}
+            <div className="anatomy-feature-item left-item item-bottom point-anim-5">
               <div className="feature-text-block">
                 <h4 className="feature-item-heading">Eco-Friendly Packaging</h4>
                 <p className="feature-item-desc">Sustainable bottles and recyclable materials.</p>
@@ -103,8 +115,8 @@ export const ScentOfElegance: React.FC = () => {
 
           {/* Right Column Features with Guidelines */}
           <div className="anatomy-features-col right-features">
-            {/* Feature 4 */}
-            <div className="anatomy-feature-item right-item item-top-right">
+            {/* Step 2: Right 1 */}
+            <div className="anatomy-feature-item right-item item-top-right point-anim-2">
               <div className="feature-connector-line right-line">
                 <span className="connector-dot"></span>
               </div>
@@ -114,8 +126,8 @@ export const ScentOfElegance: React.FC = () => {
               </div>
             </div>
 
-            {/* Feature 5 */}
-            <div className="anatomy-feature-item right-item item-bottom-right">
+            {/* Step 4: Right 2 */}
+            <div className="anatomy-feature-item right-item item-bottom-right point-anim-4">
               <div className="feature-connector-line right-line">
                 <span className="connector-dot"></span>
               </div>

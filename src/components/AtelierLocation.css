@@ -30,13 +30,34 @@
 }
 
 /* =========================================
-   1. Left Column: Details & Directions
+   1. Left Column: Details & Directions (Scroll-Reveal)
    ========================================= */
 .atelier-info-col {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1), transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.atelier-location-section.in-view .atelier-info-col {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.atelier-map-col {
+  position: relative;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(30px) scale(0.96);
+  transition: opacity 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.18s, transform 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.18s;
+}
+
+.atelier-location-section.in-view .atelier-map-col {
+  opacity: 1;
+  transform: translateX(0) scale(1);
 }
 
 .atelier-kicker {

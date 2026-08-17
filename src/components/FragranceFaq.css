@@ -28,6 +28,14 @@
 .simple-faq-header {
   text-align: center;
   margin-bottom: 44px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1), transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.simple-faq-section.in-view .simple-faq-header {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .faq-kicker-label {
@@ -75,6 +83,31 @@
   overflow: hidden;
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 4px 18px rgba(45, 35, 20, 0.04);
+  opacity: 0;
+}
+
+.simple-faq-section.in-view .simple-faq-card {
+  animation: faqCardFadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.simple-faq-section.in-view .simple-faq-card:nth-child(1) { animation-delay: 0.20s; }
+.simple-faq-section.in-view .simple-faq-card:nth-child(2) { animation-delay: 0.38s; }
+.simple-faq-section.in-view .simple-faq-card:nth-child(3) { animation-delay: 0.56s; }
+.simple-faq-section.in-view .simple-faq-card:nth-child(4) { animation-delay: 0.74s; }
+.simple-faq-section.in-view .simple-faq-card:nth-child(5) { animation-delay: 0.92s; }
+
+@keyframes faqCardFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+  50% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .simple-faq-card:hover {

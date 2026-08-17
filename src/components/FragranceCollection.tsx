@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ShoppingBag, Check } from 'lucide-react';
 import './FragranceCollection.css';
 
@@ -58,11 +58,11 @@ export const collectionProducts: ProductItem[] = [
     price: 'AED 1,050',
     priceNum: 1050,
     volume: '60ML',
-    notes: 'Taif Rose · Fresh Bergamot · Ocean Ambergris',
-    description: 'A celestial breath of crystalline sea salt, sparkling bergamot, and radiant ambergris.',
+    notes: 'Taif Rose · Italian Bergamot · Ocean Ambergris',
+    description: 'A serene oceanic symphony with pure Taif roses, zesty Italian bergamot, and sunlit ambergris.',
     tag: 'ROYAL EDITION',
     image: '/p3.png',
-    pedestalTone: '#d4cbbd',
+    pedestalTone: '#e1d7c8',
   },
   {
     id: 'mehfil',
@@ -73,40 +73,41 @@ export const collectionProducts: ProductItem[] = [
     price: 'AED 1,100',
     priceNum: 1100,
     volume: '60ML',
-    notes: 'Damascus Rose · Wild Peony · Sweet Lychee',
-    description: 'Velvety Damascus rose intertwined with wild peonies and glowing sweet lychee.',
-    tag: 'LIMITED',
+    notes: 'Damascus Rose · Peony · Wild Lychee',
+    description: 'A grand celebratory bouquet of velvet Damascus rose petals, pink peony, and golden Madagascar vanilla.',
+    tag: 'EXCLUSIVE',
     image: '/p4.png',
-    pedestalTone: '#e2d3c1',
+    pedestalTone: '#eedec9',
   },
   {
     id: 'zareen',
     name: 'Zareen',
-    urduName: 'زرین',
+    urduName: 'زریں',
     subtitle: 'EXTRAIT DE PARFUM',
-    category: 'oriental',
+    category: 'floral',
     price: 'AED 1,150',
     priceNum: 1150,
     volume: '60ML',
-    notes: 'Amethyst Plum · Golden Suede · Tonka Bean',
-    description: 'An alluring velvety blend of midnight plum, golden suede, and sweet warm tonka.',
-    tag: 'PREMIUM',
+    notes: 'Midnight Plum · Golden Suede · Amber',
+    description: 'Velvety midnight plum enriched with seductive golden suede, warm tonka bean, and crystal amber.',
+    tag: 'BESTSELLER',
     image: '/p5.png',
-    pedestalTone: '#decbb9',
+    pedestalTone: '#e3d2be',
   },
   {
-    id: 'safar',
-    name: 'Safar',
-    urduName: 'سفر',
+    id: 'hayat',
+    name: 'Hayat',
+    urduName: 'حیات',
     subtitle: 'EXTRAIT DE PARFUM',
     category: 'woody',
-    price: 'AED 980',
-    priceNum: 980,
+    price: 'AED 1,100',
+    priceNum: 1100,
     volume: '60ML',
-    notes: 'Emerald Vetiver · Atlas Cedar · Crisp Pine',
-    description: 'An untamed expedition through emerald pine forests, earthy vetiver, and smoky cedar.',
+    notes: 'Smoky Vetiver · Cedarwood · Ambergris',
+    description: 'A tribute to eternal vitality featuring smoky Haitian vetiver, aged atlas cedarwood, and resinous amber.',
+    tag: 'SIGNATURE',
     image: '/p6.png',
-    pedestalTone: '#d2c9b7',
+    pedestalTone: '#dfd1be',
   },
   {
     id: 'sukoon',
@@ -117,11 +118,11 @@ export const collectionProducts: ProductItem[] = [
     price: 'AED 1,200',
     priceNum: 1200,
     volume: '60ML',
-    notes: 'White Sandalwood · Warm Vanilla · Solar Musk',
-    description: 'Pure serenity captured in golden solar medallion notes of creamy sandalwood and white vanilla.',
-    tag: 'ICONIC',
+    notes: 'Solar Amber · White Sandalwood · Vanilla',
+    description: 'Absolute inner peace woven with warm solar amber, soothing Mysore sandalwood, and imperial vanilla.',
+    tag: 'ROYAL EDITION',
     image: '/p7.png',
-    pedestalTone: '#ecdcc5',
+    pedestalTone: '#eadbc6',
   },
 ];
 
@@ -134,8 +135,27 @@ export const FragranceCollection: React.FC<FragranceCollectionProps> = ({
   onAddToCart,
   onProductSelect,
 }) => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isInView, setIsInView] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<'all' | 'oriental' | 'woody' | 'floral' | 'fresh'>('all');
   const [addedId, setAddedId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const filteredProducts = activeTab === 'all'
     ? collectionProducts
@@ -155,7 +175,7 @@ export const FragranceCollection: React.FC<FragranceCollectionProps> = ({
   };
 
   return (
-    <section className="editorial-collection-section" id="collection">
+    <section className={`editorial-collection-section ${isInView ? 'in-view' : ''}`} id="collection" ref={sectionRef}>
       {/* Background Soft Glow */}
       <div className="collection-bg-glow"></div>
 
@@ -213,12 +233,12 @@ export const FragranceCollection: React.FC<FragranceCollectionProps> = ({
         </div>
 
         {/* 4-Column Editorial Products Grid (p1 to p7) */}
-        <div className="editorial-products-grid">
+        <div className="editorial-products-grid" key={activeTab}>
           {filteredProducts.map((product, idx) => (
             <div
               key={product.id}
               className="editorial-product-card"
-              style={{ animationDelay: `${idx * 0.07}s`, cursor: 'pointer' }}
+              style={{ animationDelay: `${idx * 0.18}s`, cursor: 'pointer' }}
               onClick={() => handleCardClick(product)}
             >
               {/* Unified Editorial Studio Frame with Travertine Pedestal */}

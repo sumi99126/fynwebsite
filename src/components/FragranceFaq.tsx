@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './FragranceFaq.css';
 
 interface SimpleFaqItem {
@@ -41,14 +41,33 @@ const FAQ_ITEMS: SimpleFaqItem[] = [
 ];
 
 export const FragranceFaq: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
   const [openFaqId, setOpenFaqId] = useState<string | null>(null);
+  const [isInView, setIsInView] = useState<boolean>(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      { threshold: 0.18, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const toggleFaq = (id: string) => {
     setOpenFaqId((prev) => (prev === id ? null : id));
   };
 
   return (
-    <section className="simple-faq-section" id="faq">
+    <section className={`simple-faq-section ${isInView ? 'in-view' : ''}`} id="faq" ref={sectionRef}>
       <div className="simple-faq-container">
         {/* Section Header Matching Exact Reference Image */}
         <div className="simple-faq-header">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './RefinedMoments.css';
 
 interface RefinedMomentsProps {
@@ -6,6 +6,26 @@ interface RefinedMomentsProps {
 }
 
 export const RefinedMoments: React.FC<RefinedMomentsProps> = ({ onExploreCollection }) => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isInView, setIsInView] = useState<boolean>(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      { threshold: 0.18, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const scrollToCollection = () => {
     if (onExploreCollection) {
       onExploreCollection();
@@ -18,7 +38,7 @@ export const RefinedMoments: React.FC<RefinedMomentsProps> = ({ onExploreCollect
   };
 
   return (
-    <section className="refined-moments-section" id="moments">
+    <section className={`refined-moments-section ${isInView ? 'in-view' : ''}`} id="moments" ref={sectionRef}>
       {/* Decorative Wavy Lines on Right (FYN Luxury Gold Theme) */}
       <div className="moments-decor-waves">
         <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">

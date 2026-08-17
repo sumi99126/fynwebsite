@@ -126,6 +126,19 @@ export const ParchmentHero: React.FC<ParchmentHeroProps> = ({
 }) => {
   const [activeIdx, setActiveIdx] = useState<number>(0);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  // Sticky Navbar Detection on Scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPos = window.scrollY || document.documentElement.scrollTop || window.pageYOffset || 0;
+      setIsScrolled(scrollPos > 30);
+    };
+
+    handleScroll(); // Initial check
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Automatic Carousel Flowing Transitions (Auto-Moves Every 4.5s)
   useEffect(() => {
@@ -198,7 +211,7 @@ export const ParchmentHero: React.FC<ParchmentHeroProps> = ({
       {/* =========================================
          1. Header Navbar (Centered Menu, Enlarged Logo & Clean Icons)
          ========================================= */}
-      <header className="parchment-top-navbar">
+      <header className={`parchment-top-navbar ${isScrolled ? 'is-sticky-scrolled' : ''}`}>
         {/* Left: Enlarged Solo Logo */}
         <div className="navbar-logo-solo">
           <a href="#" title="FYN PERFUME">
